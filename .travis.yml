@@ -1,0 +1,95 @@
+if: branch =~ ^master$|^release|^development$
+language: python
+group: stable
+dist: trusty
+os: linux
+sudo: required
+services:
+- docker
+
+before_install: |-
+  if [ "master" == "${TRAVIS_BRANCH}" ]; then
+      for env_value in $(compgen -v |grep '.*_PRODUCTION$'); do
+          eval export ${env_value%_PRODUCTION}="${!env_value}"
+        done
+      export environment="production"
+  elif [[ "${TRAVIS_BRANCH}" == release*  ]]; then
+      for env_value in $(compgen -v |grep '.*_STAGING$'); do
+          eval export ${env_value%_STAGING}="${!env_value}"
+      done
+      export environment="staging"
+  else
+      for env_value in $(compgen -v |grep '.*_DEVELOPMENT$'); do
+          eval export ${env_value%_DEVELOPMENT}="${!env_value}"
+      done
+      export environment="development"
+  fi
+
+install:
+  - pip install awscli --upgrade
+
+script: |-
+    set -e
+
+    # Generate project name
+    export PROJECT_NAME=${TRAVIS_REPO_SLUG#*/}
+    # ECR login
+    export ECR_LOGIN="aws ecr get-login --registry-ids ${AWS_REGISTRY_ID} --region ${AWS_REGION} --no-include-email"
+    # Generate image tags
+    tag_build_num="v${TRAVIS_BUILD_NUMBER}-build"
+    export IMAGE="${AWS_REGISTRY_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${AWS_ECR_NAME}:$tag_build_num"
+    export IMAGE_LATEST="${AWS_REGISTRY_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${AWS_ECR_NAME}:latest"
+
+    export PUSH_COMMAND="docker push ${IMAGE} && docker push ${IMAGE_LATEST}"
+
+    echo $IMAGE
+    echo $IMAGE_LATEST
+
+    # build test image to run test
+    docker build \
+      -t test \
+      --target builder \
+      --build-arg BUILD_ENV=$environment \
+      --build-arg NPM_TOKEN=$NPM_TOKEN \
+      .
+
+    #build finally image
+    docker build \
+      -t $IMAGE \
+      -t $IMAGE_LATEST \
+      --build-arg BUILD_ENV=$environment \
+      --build-arg NPM_TOKEN=$NPM_TOKEN \
+      .
+
+    # Create dist directory
+    mkdir -p dist
+
+    # cp static for s3
+    docker run --rm -v `pwd`/dist:/s3_upload test sh -c "cp -Rp /srv/dist/* /s3_upload/"
+
+deploy:
+  - provider: s3
+    access_key_id:
+      ${AWS_S3_STATIC_ASSETS_ACCESS_KEY_ID}
+    secret_access_key:
+      ${AWS_S3_STATIC_ASSETS_SECRET_KEY}
+    bucket:
+      ${AWS_S3_STATIC_ASSETS_BUCKET}
+    region:
+      ap-southeast-1
+    local_dir: dist
+    upload_dir: dist
+    cache_control: "max-age=31536000,immutable"
+    skip_cleanup: true
+    on: &deploybranch
+      branch:
+        - development
+        - release*
+        - master
+
+  - provider: script
+    script: >-
+      $(AWS_ACCESS_KEY_ID=${AWS_ECR_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_ECR_SECRET_ACCESS_KEY} ${ECR_LOGIN})
+      && ${PUSH_COMMAND}
+    skip_cleanup: true
+    on: *deploybranch

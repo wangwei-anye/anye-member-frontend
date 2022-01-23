@@ -1,0 +1,46 @@
+@charset 'utf-8';
+@import "../../assets/style/base.less";
+
+.tab-list {
+  height: round(76rem / @ui-width, 2);
+  box-sizing: border-box;
+  font-size: round(16rem / @ui-width, 2);
+  position: relative;
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    background-color: #fbfcfd;
+  }
+  .tab {
+    box-sizing: border-box;
+    text-align: center;
+    color: rgba(26, 30, 40, 0.3);
+    position: absolute;
+    top: round(28rem / @ui-width, 2);
+    &:nth-child(1) {
+      left: round(42rem / @ui-width, 2);
+    }
+    &:nth-child(2) {
+      left: round(110rem / @ui-width, 2);
+    }
+    &:nth-child(3) {
+      left: round(202rem / @ui-width, 2);
+    }
+    &:nth-child(4) {
+      left: round(299rem / @ui-width, 2);
+    }
+    &.active {
+      color: rgb(26, 30, 40);
+      font-weight: bold;
+    }
+    .line {
+      width: round(16rem / @ui-width, 2);
+      height: round(3rem / @ui-width, 2);
+      margin: round(4rem / @ui-width, 2) auto;
+      border-radius: round(1rem / @ui-width, 2);
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import '../../../assets/style/base.less';
+
+.reset-default-btn-style {
+  border: none;
+  outline: none;
+}
+
+:local {
+  .wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img {
+    display: flex;
+    width: 100%;
+    height: round(228rem / @ui-width, 2);
+    border-radius: round(5rem / @ui-width, 2);
+  }
+
+  .btn {
+    .reset-default-btn-style;
+    margin-top: round(32rem / @ui-width, 2);
+    height: round(48rem / @ui-width, 2);
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    background: rgb(255, 153, 0);
+    border-radius: round(5rem / @ui-width, 2);
+    box-shadow: 0 round(2rem / @ui-width, 2) round(4rem / @ui-width, 2) rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    .customFont(PingFangTC-Medium);
+    font-size: round(16rem / @ui-width, 2);
+    line-height: round(46rem / @ui-width, 2);
+    letter-spacing: round(0.54rem / @ui-width, 2);
+  }
+
+  .statement {
+    margin-top: round(15rem / @ui-width, 2);
+    align-self: flex-start;
+    .customFont(PingFangTC-Regular);
+    font-weight: lighter;
+    font-size: round(12rem / @ui-width, 2);
+    letter-spacing: round(0.4rem / @ui-width, 2);
+    line-height: round(17rem / @ui-width, 2);
+    text-align: left;
+    color: rgb(255, 255, 255);
+  }
+
+}

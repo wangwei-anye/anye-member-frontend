@@ -1,0 +1,101 @@
+@charset "utf-8";
+@import '../../../assets/style/base.less';
+
+:local {
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    border-radius: round(5rem / @ui-width, 2);
+    overflow: hidden;
+  }
+
+  .content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: round(16rem / @ui-width, 2) round(16rem / @ui-width, 2) 0
+      round(16rem / @ui-width, 2);
+  }
+
+  .data {
+    display: flex;
+    justify-content: flex-end;
+    color: rgba(0, 0, 0, 0.3);
+    .customFont;
+    font-size: round(12rem / @ui-width, 2);
+    line-height: round(14rem / @ui-width, 2);
+    letter-spacing: round(1.17rem / @ui-width, 2);
+  }
+
+  .index {
+    background: rgba(255, 153, 0, 0.2);
+    border-radius: 50%;
+    width: round(56rem / @ui-width, 2);
+    height: round(56rem / @ui-width, 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-top: round(34rem / @ui-width, 2);
+  }
+  .indexText {
+    width: round(48rem / @ui-width, 2);
+    height: round(48rem / @ui-width, 2);
+    background: rgb(255, 153, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .customFont(Helvetica-Bold);
+    font-size: round(20rem / @ui-width, 2);
+    line-height: round(20rem / @ui-width, 2);
+    letter-spacing: round(0.5rem / @ui-width, 2);
+    color: rgb(255, 255, 255);
+  }
+
+  .question {
+    .customFont(PingFangHK-Medium);
+    font-size: round(16rem / @ui-width, 2);
+    line-height: round(24rem / @ui-width, 2);
+    letter-spacing: round(1.56rem / @ui-width, 2);
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin-top: round(5rem / @ui-width, 2);
+    &:nth-of-type(1) {
+      margin-top: round(32rem / @ui-width, 2);
+    }
+    &:nth-last-of-type(1) {
+      margin-bottom: round(24rem / @ui-width, 2);
+    }
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    height: round(48rem / @ui-width, 2);
+    border-radius: round(5rem / @ui-width, 2);
+    margin-top: round(70rem / @ui-width, 2);
+  }
+  .btn {
+    // display: flex;
+    display: block;
+    width: 50%;
+    // flex: 1;
+    // align-items: center;
+    // justify-content: center;
+    text-align: center;
+    background: rgb(255, 153, 0);
+    height: 100%;
+    outline: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    .customFont(PingFangTC-Medium);
+    font-size: round(16rem / @ui-width, 2);
+    letter-spacing: round(0.54rem / @ui-width, 2);
+  }
+  .pre {
+    background: rgba(255, 153, 0, 0.61);
+  }
+}

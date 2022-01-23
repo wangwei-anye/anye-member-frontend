@@ -1,0 +1,84 @@
+@charset "utf-8";
+@import "../../../assets/style/base.less";
+.m-cell-item {
+  box-shadow: #ccc 0px 0px round(10rem / @ui-width, 2);
+  border-radius: round(4rem / @ui-width, 2);
+  background-color: white;
+  margin-bottom: round(12rem / @ui-width, 2);
+  box-sizing: border-box;
+  .cover-img-wrap {
+    position: relative;
+    background-image: url(../../../assets/img/placeholder.png);
+    background-size: 100% 100%;
+  }
+  img {
+    width: 100%;
+    border-top-left-radius: round(4rem / @ui-width, 2);
+    border-top-right-radius: round(4rem / @ui-width, 2);
+    border: none;
+    outline: none;
+    display: block;
+    &.load-error {
+      opacity: 0;
+    }
+  }
+  .txt-box {
+    padding: round(8rem / @ui-width, 2) round(8rem / @ui-width, 2);
+    .title1 {
+      width: 100%;
+      font-size: round(16rem / @ui-width, 2);
+      line-height: round(24rem / @ui-width, 2);
+      color: rgb(26, 30, 40);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .m-exchange-type-btn-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: round(2rem / @ui-width, 2);
+    }
+    .m-exchange-type-btn-wrap-two-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: round(4rem / @ui-width, 2);
+    }
+    .txt {
+      font-size: round(10rem / @ui-width, 2);
+      line-height: round(30rem / @ui-width, 2);
+      height: round(30rem / @ui-width, 2);
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: rgb(0, 51, 232);
+      width: round(85rem / @ui-width, 2);
+    }
+    .txt-two-line {
+      font-size: round(10rem / @ui-width, 2);
+      line-height: round(15rem / @ui-width, 2);
+      height: round(30rem / @ui-width, 2);
+      color: #0033e8;
+      width: round(85rem / @ui-width, 2);
+      white-space: pre-line;
+    }
+    .txt-no-btn {
+      width: round(256rem / @ui-width, 2);
+    }
+    .btn {
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      width: round(60rem / @ui-width, 2);
+      height: round(28rem / @ui-width, 2);
+      text-align: center;
+      line-height: round(28rem / @ui-width, 2);
+      font-size: round(12rem / @ui-width, 2);
+      border-radius: round(4rem / @ui-width, 2);
+      color: white;
+      background-color: rgb(0, 51, 232);
+    }
+  }
+}

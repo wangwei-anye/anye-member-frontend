@@ -1,0 +1,43 @@
+@charset "utf-8";
+@import '../../assets/style/base.less';
+.m-placeholder-wrap {
+  margin-left: 4.2667%;
+  display: flex;
+  @bg: linear-gradient(to right, #ececf0 8%, #d3d3d9 18%, #ececf0 33%);
+  margin-bottom: round(10rem / @ui-width, 2);
+  .left-info {
+    @width: round(120rem / @ui-width, 2);
+    width: @width;
+    height: round(90rem / @ui-width, 2);
+    background: @bg;
+    background-size: 800px 45px;
+    animation: shine 1s infinite;
+  }
+  .right-info {
+    flex: 1;
+    margin-left: round(12rem / @ui-width, 2);
+    .title {
+      width: 70%;
+      height: round(15rem / @ui-width, 2);
+      background: @bg;
+      margin-bottom: round(10rem / @ui-width, 2);
+      background-size: 800px 45px;
+      animation: shine 1s infinite;
+    }
+    .desc {
+      width: 90%;
+      height: round(20rem / @ui-width, 2);
+      background: @bg;
+      background-size: 800px 45px;
+      animation: shine 1s infinite;
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+}

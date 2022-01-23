@@ -1,0 +1,37 @@
+@charset "utf-8";
+@import '../../assets/style/base.less';
+
+:local {
+  .answerMode {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: rgb(255, 255, 255);
+  }
+
+  .title {
+    margin-top: round(20rem / @ui-width, 2);
+    margin-bottom: round(20rem / @ui-width, 2);
+    .customFont(PingFangHk-Semibold);
+    font-size: round(26rem / @ui-width, 2);
+    line-height: round(30rem / @ui-width, 2);
+    letter-spacing: round(1.56rem / @ui-width, 2);
+    font-weight: normal;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+
+  .subTitle {
+    .customFont;
+    margin-top: round(10rem / @ui-width, 2);
+    margin-bottom: round(48rem / @ui-width, 2);
+    line-height: round(16rem / @ui-width, 2);
+    font-size: round(14rem / @ui-width, 2);
+    letter-spacing: round(1.36rem / @ui-width, 2);
+    text-align: center;
+  }
+}
+
+.am-toast > span {
+  max-width: 80%;
+}

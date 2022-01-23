@@ -1,0 +1,31 @@
+@charset "utf-8";
+@import '../../assets/style/base.less';
+.m-loading-wrap {
+  margin-top: round(12rem / @ui-width, 2);
+  text-align: center;
+  font-size: round(12rem / @ui-width, 2);
+  line-height: round(23rem / @ui-width, 2);
+  color: rgba(26, 30, 40, 0.3);
+  img {
+    width: round(24rem / @ui-width, 2);
+    height: round(24rem / @ui-width, 2);
+    animation: move linear 2s infinite;
+  }
+  @keyframes move {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

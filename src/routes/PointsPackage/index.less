@@ -1,0 +1,157 @@
+@charset "utf-8";
+@import "../../assets/style/base.less";
+
+.p-right-wrap {
+  padding-top: round(48rem / @ui-width, 2);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  font-size: round(15rem / @ui-width, 2);
+  .header {
+    box-shadow: 0 round(1rem / @ui-width, 2) 0 rgb(244, 244, 244);
+    background-color: rgb(251, 252, 253);
+  }
+  button {
+    border: none;
+    outline: none;
+  }
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+  .loading {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 50, 232);
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .icon {
+      animation: spin 1s linear infinite;
+      display: block;
+      position: absolute;
+      top: round(217rem / @ui-width, 2);
+      left: round(167rem / @ui-width, 2);
+      width: round(36rem / @ui-width, 2);
+      height: round(36rem / @ui-width, 2);
+    }
+    .txt {
+      position: absolute;
+      top: round(288rem / @ui-width, 2);
+      left: round(128rem / @ui-width, 2);
+      line-height: round(30rem / @ui-width, 2);
+      font-size: round(16rem / @ui-width, 2);
+      letter-spacing: round(0.89rem / @ui-width, 2);
+      color: white;
+    }
+  }
+
+  .g-main {
+    flex: 1;
+    overflow-y: scroll;
+    padding: 0 round(16rem / @ui-width, 2);
+    background-color: rgb(0, 50, 232);
+  }
+  .m-title-wrap {
+    color: #fff;
+    margin: round(32rem / @ui-width, 2) auto;
+    text-align: center;
+    .title {
+      font-weight: 500;
+      line-height: round(50rem / @ui-width, 1);
+      font-size: round(28rem / @ui-width, 2);
+    }
+  }
+  .m-form {
+    position: relative;
+    .tip-box {
+      position: absolute;
+      top: round(-56rem / @ui-width, 2);
+      width: 100%;
+    }
+    input {
+      padding-left: round(16rem / @ui-width, 2);
+      width: 100%;
+      outline: none;
+      border: none;
+      height: round(40rem / @ui-width, 2);
+      color: rgba(0, 0, 0, 0.8);
+      font-size: round(16rem / @ui-width, 2);
+      border-radius: round(5rem / @ui-width, 2);
+      height: round(48rem / @ui-width, 2);
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      outline: none;
+      border: none;
+      height: round(40rem / @ui-width, 2);
+      background-color: rgb(255, 153, 0);
+      margin-top: round(16rem / @ui-width, 2);
+      color: #fff;
+      font-size: round(16rem / @ui-width, 2);
+      border-radius: round(5rem / @ui-width, 2);
+      height: round(48rem / @ui-width, 2);
+    }
+  }
+  .m-goto-history {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: round(12rem / @ui-width, 2);
+    line-height: round(20rem / @ui-width, 2);
+    margin-top: round(8rem / @ui-width, 2);
+    height: round(20rem / @ui-width, 2);
+    float: right;
+    .arrow {
+      width: round(6rem / @ui-width, 2);
+      height: round(10rem / @ui-width, 2);
+      position: relative;
+      top: round(1rem / @ui-width, 2);
+      background: url(../../assets/img/arrow-white.png) no-repeat;
+      background-size: 100% 100%;
+      display: inline-block;
+      margin-left: round(5rem / @ui-width, 2);
+    }
+  }
+  .m-note {
+    padding: round(16rem / @ui-width, 2);
+    font-size: round(14rem / @ui-width, 2);
+    color: #666;
+    margin: 0 auto;
+    margin-top: round(48rem / @ui-width, 2);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: round(5rem / @ui-width, 2);
+    color: #fff;
+    margin-bottom: round(40rem / @ui-width, 2);
+    .sub-title {
+      letter-spacing: round(0.54rem / @ui-width, 2);
+      text-align: center;
+      font-size: round(16rem / @ui-width, 2);
+      margin-bottom: round(36rem / @ui-width, 2);
+    }
+    .note {
+      letter-spacing: round(0.8rem / @ui-width, 2);
+      margin-bottom: round(6rem / @ui-width, 2);
+      line-height: 1.5;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  ::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: round(16rem / @ui-width, 2);
+  }
+}
+
+.am-toast-notice {
+  position: relative;
+  bottom: round(70rem / @ui-width, 2);
+}

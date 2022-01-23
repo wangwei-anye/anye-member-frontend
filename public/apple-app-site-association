@@ -1,0 +1,25 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "A8XZ5C62P6.com.hk01.news-app",
+        "paths": [
+          "*"
+        ]
+      },
+      {
+        "appID": "B9FCC7VU7J.com.hk01.news-app.prd",
+        "paths": [
+          "*"
+        ]
+      },
+      {
+        "appID": "B9FCC7VU7J.com.hk01.news-app.stg",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  }
+}

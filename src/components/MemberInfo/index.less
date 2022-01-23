@@ -1,0 +1,125 @@
+@charset 'utf-8';
+@import "../../assets/style/base.less";
+
+.member-info {
+  width: round(333rem / @ui-width, 2);
+  height: round(185rem / @ui-width, 2);
+  background: url("../../assets/img/banner_bg@2x.png") 0 0 no-repeat;
+  background-size: 100% 100%;
+  margin: round(16rem / @ui-width, 2) auto 0;
+  border-top-left-radius: round(8rem / @ui-width, 2);
+  border-top-right-radius: round(8rem / @ui-width, 2);
+  position: relative;
+  color: white;
+  .login-loading {
+    position: absolute;
+    height: round(16rem / @ui-width, 2);
+    left: round(18rem / @ui-width, 2);
+    top: round(17rem / @ui-width, 2);
+    font-size: round(10rem / @ui-width, 2);
+    line-height: round(17rem / @ui-width, 2);
+    padding-left: round(20rem / @ui-width, 2);
+    letter-spacing: round(0.14rem / @ui-width, 2);
+    pointer-events: none;
+    .turn {
+      animation: turn 1s linear infinite;
+    }
+    @keyframes turn {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      25% {
+        -webkit-transform: rotate(90deg);
+      }
+      50% {
+        -webkit-transform: rotate(180deg);
+      }
+      75% {
+        -webkit-transform: rotate(270deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    .loading-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: round(16rem / @ui-width, 2);
+      height: round(16rem / @ui-width, 2);
+    }
+  }
+  .m-user-wrap {
+    position: absolute;
+    width: round(124rem / @ui-width, 2);
+    left: round(16rem / @ui-width, 2);
+    top: round(36rem / @ui-width, 2);
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+  }
+  .head-no-login {
+    padding-top: round(21rem / @ui-width, 2);
+  }
+  .head {
+    width: round(56rem / @ui-width, 2);
+    height: round(56rem / @ui-width, 2);
+    border-radius: 50%;
+  }
+  .name {
+    font-size: round(14rem / @ui-width, 2);
+    line-height: round(20rem / @ui-width, 2);
+    margin-top: round(4rem / @ui-width, 2);
+  }
+  .head-short-name {
+    .name {
+      margin-top: round(12rem / @ui-width, 2);
+    }
+  }
+  .menber-level {
+    font-size: round(10rem / @ui-width, 2);
+    line-height: round(14rem / @ui-width, 2);
+    height: round(14rem / @ui-width, 2);
+    margin-top: round(8rem / @ui-width, 2);
+  }
+  .point-txt {
+    position: absolute;
+    top: round(36rem / @ui-width, 2);
+    right: round(32rem / @ui-width, 2);
+    font-size: round(14rem / @ui-width, 2);
+    line-height: round(20rem / @ui-width, 2);
+    height: round(20rem / @ui-width, 2);
+  }
+  .point {
+    position: absolute;
+    top: round(64rem / @ui-width, 2);
+    right: round(32rem / @ui-width, 2);
+    font-size: round(36rem / @ui-width, 2);
+    line-height: round(43rem / @ui-width, 2);
+    height: round(43rem / @ui-width, 2);
+  }
+  .tip-txt-login {
+    position: absolute;
+    top: round(36rem / @ui-width, 2);
+    right: round(105rem / @ui-width, 2);
+    font-size: round(20rem / @ui-width, 2);
+  }
+  .tip-txt-point {
+    position: absolute;
+    top: round(64rem / @ui-width, 2);
+    right: round(32rem / @ui-width, 2);
+    font-size: round(30rem / @ui-width, 2);
+  }
+  .note {
+    background: url("../../assets/img/toIntroduceBg.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    width: round(142rem / @ui-width, 2);
+    height: round(37rem / @ui-width, 2);
+    line-height: round(37rem / @ui-width, 2);
+    right: 0;
+    bottom: round(22rem / @ui-width, 2);
+    text-align: center;
+    font-size: round(14rem / @ui-width, 2);
+  }
+}

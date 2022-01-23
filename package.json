@@ -1,0 +1,91 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "cross-env ENV=development PORT=80 roadhog server",
+    "dev": "cross-env ENV=development PORT=80 roadhog server --debug",
+    "build:staging": "cross-env ENV=test roadhog build",
+    "build:development": "cross-env ENV=test roadhog build",
+    "build:production": "cross-env ENV=production roadhog build",
+    "lint": "eslint --ext .js src test",
+    "precommit": "npm run lint"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@hk01-digital/react-native-webview-events": "^5.0.2",
+    "antd-mobile": "^2.2.5",
+    "babel-plugin-import": "^1.9.1",
+    "clipboard": "^2.0.4",
+    "cross-env": "^5.2.0",
+    "dayjs": "^1.7.8",
+    "dva": "^2.4.0",
+    "immutable": "^3.8.2",
+    "js-cookie": "^2.2.0",
+    "moment": "^2.24.0",
+    "qs": "^6.5.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-google-recaptcha": "^1.1.0",
+    "react-lazy-load": "^3.0.13",
+    "react-waypoint": "^8.1.0",
+    "uuid-v4": "^0.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "eslint": "^4.14.0",
+    "eslint-config-umi": "^0.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "husky": "^0.12.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "mockjs": "^1.0.1-beta3",
+    "redbox-react": "^1.4.3",
+    "roadhog": "2.4.9",
+    "vconsole": "^3.3.0",
+    "vconsole-webpack-plugin": "^1.4.2"
+  },
+  "_env_": {
+    "development": {
+      "API_BASE": "https://member-application-service.hktester.com/api/v1",
+      "HK_API_SKU": "https://wallet.hktester.com/api/v2.0",
+      "HK_API_ACTIVE_SELECT": "https://rcfg-api.hktester.com/v1",
+      "HK_API_BALANCES": "https://member-data.api.hktester.com",
+      "HK_API_01INFINITE": "https://mem-data.api.hktester.com",
+      "HK_API_ID": "hk01uat",
+      "WEB_JS_SDK": "tester",
+      "APPID": "6d136024d684ad43e0b3835563f46240",
+      "ENV": "development",
+      "SITE_KEY": "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI",
+      "INVISIBLE_SITE_KEY": "6LfukbYUAAAAAA_KRBlx6J1rX19W4YN9ijcr6kbY"
+    },
+    "test": {
+      "API_BASE": "https://member-application-service.hktester.com/api/v1",
+      "HK_API_SKU": "https://wallet.hktester.com/api/v2.0",
+      "HK_API_ACTIVE_SELECT": "https://rcfg-api.hktester.com/v1",
+      "HK_API_BALANCES": "https://member-data.api.hktester.com",
+      "HK_API_01INFINITE": "https://mem-data.api.hktester.com",
+      "HK_API_ID": "hk01uat",
+      "WEB_JS_SDK": "tester",
+      "APPID": "6d136024d684ad43e0b3835563f46240",
+      "ENV": "test",
+      "SITE_KEY": "6LfNDrAUAAAAAMsdf3ZIGkAE53dG8U9Ye6p7tRqi",
+      "INVISIBLE_SITE_KEY": "6LfNDrAUAAAAAMsdf3ZIGkAE53dG8U9Ye6p7tRqi"
+    },
+    "production": {
+      "API_BASE": "https://member-application-service.wezeroplus.com/api/v1",
+      "HK_API_SKU": "https://wallet.wezeroplus.com/api/v2.0",
+      "HK_API_ACTIVE_SELECT": "https://rcfg-api.hk01.com/v1",
+      "HK_API_BALANCES": "https://member-data.api.hk01.com",
+      "HK_API_01INFINITE": "https://mem-data.api.hk01.com",
+      "HK_API_ID": "hk01",
+      "WEB_JS_SDK": "production",
+      "APPID": "0690425c6aa25cf94b92dd691734dd39",
+      "ENV": "production",
+      "SITE_KEY": "6LfNDrAUAAAAAMsdf3ZIGkAE53dG8U9Ye6p7tRqi",
+      "INVISIBLE_SITE_KEY": "6LfNDrAUAAAAAMsdf3ZIGkAE53dG8U9Ye6p7tRqi"
+    }
+  }
+}

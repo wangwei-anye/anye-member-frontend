@@ -1,0 +1,35 @@
+@charset 'utf-8';
+@import '../../assets/style/base.less';
+
+.header {
+  height: round(48rem / @ui-width, 2);
+  font-size: round(18rem / @ui-width, 2);
+  text-align: center;
+  line-height: round(48rem / @ui-width, 2);
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 150;
+    background-color: #fbfcfd;
+  }
+  .icon {
+    position: absolute;
+    width: round(24rem / @ui-width, 2);
+    height: round(24rem / @ui-width, 2);
+    top: round(12rem / @ui-width, 2);
+  }
+  .icon-return {
+    left: round(12rem / @ui-width, 2);
+  }
+  // .icon-message{
+  //   right: round(52rem / @ui-width, 2);
+  // }
+  .icon-message {
+    right: round(12rem / @ui-width, 2);
+  }
+  .icon-setting {
+    right: round(48rem / @ui-width, 2);
+  }
+}

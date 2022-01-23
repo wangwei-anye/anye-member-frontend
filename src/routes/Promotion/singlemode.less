@@ -1,0 +1,180 @@
+@charset "utf-8";
+@import "../../assets/style/base.less";
+
+:local {
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: round(32rem / @ui-width, 2);
+  }
+
+  .title {
+    .customFont(PingFangHK-Semibold);
+    text-align: center;
+    font-size: round(28rem / @ui-width, 2);
+    font-weight: lighter;
+    line-height: round(50rem / @ui-width, 2);
+    letter-spacing: round(1.56rem / @ui-width, 2);
+    color: rgb(255, 255, 255);
+  }
+
+  .coupon {
+    display: flex;
+    margin-top: round(32rem / @ui-width, 2);
+    width: 100%;
+    flex-direction: column;
+    border-radius: round(5rem / @ui-width, 2);
+    box-shadow: 0 round(2rem / @ui-width, 2) round(7rem / @ui-width, 2) 0
+      rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-bottom: round(12rem / @ui-width, 2);
+  }
+
+  .imgWrap {
+    display: flex;
+    width: 100%;
+    height: round(114rem / @ui-width, 2);
+    border-radius: round(5rem / @ui-width, 2);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    width: round(24rem / @ui-width, 2);
+    height: round(24rem / @ui-width, 2);
+    top: round(102rem / @ui-width, 2);
+    z-index: 1;
+  }
+
+  .circleLeft {
+    left: round(-12rem / @ui-width, 2);
+    border-radius: 0 round(24rem / @ui-width, 2) round(24rem / @ui-width, 2) 0;
+    box-shadow: inset round(-8.4rem / @ui-width, 2) 0 round(7rem / @ui-width, 2)
+      round(-7rem / @ui-width, 2) rgba(0, 0, 0, 0.3);
+  }
+
+  .circleRight {
+    right: round(-12rem / @ui-width, 2);
+    border-radius: round(24rem / @ui-width, 2) 0 0 round(24rem / @ui-width, 2);
+    box-shadow: inset round(8.4rem / @ui-width, 2) 0 round(7rem / @ui-width, 2)
+      round(-7rem / @ui-width, 2) rgba(0, 0, 0, 0.3);
+  }
+
+  .desc {
+    background: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    border-radius: round(5rem / @ui-width, 2);
+    .customFont(PingFangTC-Regular);
+    font-weight: lighter;
+    font-size: round(14rem / @ui-width, 2);
+    letter-spacing: round(0.47rem / @ui-width, 2);
+    color: rgb(255, 255, 255);
+    line-height: round(20rem / @ui-width, 2);
+    padding: round(14rem / @ui-width, 2) round(27rem / @ui-width, 2);
+  }
+
+  .tip {
+    height: round(64rem / @ui-width, 2);
+    width: round(288rem / @ui-width, 2);
+    padding-top: round(16rem / @ui-width, 2);
+    position: absolute;
+    top: round(-54rem / @ui-width, 2);
+    left: round(0rem / @ui-width, 2);
+    background: url("../../assets/img/picPopup@2x.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+    font-size: round(14rem / @ui-width, 2);
+    letter-spacing: round(0.47rem / @ui-width, 2);
+    line-height: round(20rem / @ui-width, 2);
+    color: rgba(0, 0, 0, 0.78);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: round(36rem / @ui-width, 2);
+      height: round(36rem / @ui-width, 2);
+      background: url(../../assets/img/iconHand@2x.png) 0 0 no-repeat;
+      background-size: 100% 100%;
+      top: round(51rem / @ui-width, 2);
+      left: round(62rem / @ui-width, 2);
+      .upAndDown;
+    }
+  }
+
+  .btn {
+    .btnReset;
+    width: 100%;
+    height: round(48rem / @ui-width, 2);
+    text-align: center;
+    vertical-align: middle;
+    line-height: round(44rem / @ui-width, 2);
+    margin-top: round(32rem / @ui-width, 2);
+    margin-bottom: round(16rem / @ui-width, 2);
+    border-radius: round(5rem / @ui-width, 2);
+    background: rgb(255, 153, 0);
+    box-shadow: 0 round(2rem / @ui-width, 2) round(4rem / @ui-width, 2) 0
+      rgba(0, 0, 0, 0.2);
+    .customFont(PingFangTC-Medium);
+    font-size: round(16rem / @ui-width, 2);
+    letter-spacing: round(0.54rem / @ui-width, 2);
+    color: rgb(255, 255, 255);
+    position: relative;
+
+    &.disabled {
+      background: #bdbdbd;
+    }
+  }
+
+  .statement {
+    align-self: flex-start;
+    .customFont(PingFangTC-Regular);
+    font-weight: lighter;
+    font-size: round(12rem / @ui-width, 2);
+    letter-spacing: round(0.4rem / @ui-width, 2);
+    line-height: round(17rem / @ui-width, 2);
+    color: rgb(255, 255, 255);
+
+    & > a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+  }
+
+  .upAndDown {
+    :global {
+      animation: moveUpAndDown 1s infinite linear alternate 0.5s;
+    }
+  }
+}
+
+.am-modal-title {
+  color: rgb(3, 3, 3);
+  // font-family: 'PingFangTC-Medium';
+  font-weight: 500;
+}
+
+.am-modal-body {
+  color: rgb(3, 3, 3);
+  font-weight: 500;
+}
+
+.am-modal-button-group-v .am-modal-button {
+  &:first-child {
+    color: rgb(255, 153, 0);
+    font-weight: 500;
+  }
+}
+
+@keyframes moveUpAndDown {
+  to {
+    transform: translateY(15%);
+  }
+}

@@ -1,0 +1,33 @@
+@charset 'utf-8';
+@import '../../assets/style/base.less';
+
+.nav-bar {
+  width: 100%;
+  height: round(64rem / @ui-width, 2);
+  font-size: round(18rem / @ui-width, 2);
+  box-sizing: border-box;
+  // box-shadow: #ccc 0px 0px round(8rem / @ui-width, 2);
+  margin: 0 auto;
+  border-bottom-left-radius: round(8rem / @ui-width, 2);
+  border-bottom-right-radius: round(8rem / @ui-width, 2);
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  .item {
+    width: 1px;
+    flex: 1;
+    // width: 25%;
+    // float: left;
+    text-align: center;
+    // line-height: round(64rem / @ui-width, 2);
+    font-size: round(12rem / @ui-width, 2);
+    color: rgb(60, 67, 78);
+    padding: round(10rem / @ui-width, 2) 0;
+  }
+  .nav-icon {
+    display: inline-block;
+    width: round(24rem / @ui-width, 2);
+    height: round(24rem / @ui-width, 2);
+  }
+}
